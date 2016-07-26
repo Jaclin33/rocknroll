@@ -610,7 +610,7 @@ Usage: $this_prog --init n interval_name dstdir (1)
        $this_prog options interval_name srcdir dstdir (2)
        $this_prog --man
 
-  common options :
+  options :
     --debug (1)(2)
     --excludes=DIR (2)
     --ro rsync_option (2)
