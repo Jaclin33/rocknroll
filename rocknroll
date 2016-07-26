@@ -27,10 +27,8 @@ use Dir::Which q/which/;
 
 use strict ;
 
-my $VERSION = "0.3 rev ".eval{'$Rev: 22 $'=~/(\d+)/;$1;} ;
-
-# binaries
-my $RSYNC = "/usr/bin/rsync" ;
+# for subversion: my $VERSION = "0.3 rev ".eval{'$Rev: 22 $'=~/(\d+)/;$1;} ;
+my $VERSION = "0.4 ; # for git
 
 my $this_prog = basename($0) ;
 my $NEW_EXT = "_running_snapshot_" ;
