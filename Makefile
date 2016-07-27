@@ -18,8 +18,8 @@ install:
 	install	-o root -g root -m 644 rocknroll.1 ${MANDIR}
 	
 dist:
-	[ -d man1 ] || mkdir man1
+	#[ -d man1 ] || mkdir man1
+	pod2text rocknroll > README
 	./rocknroll --man > rocknroll.1
 	sed -i -e '/version management for git/s/".*"/"${VERSION}"/' rocknroll
-	pod2text rocknroll > README
 	#tar cfz rocknroll-${VERSION}.tgz ${FILES}

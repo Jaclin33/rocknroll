@@ -28,7 +28,7 @@ use Dir::Which q/which/;
 use strict ;
 
 #my $VERSION = "0.3 rev ".eval{'$Rev: 22 $'=~/(\d+)/;$1;} ; # version management for subversion
-my $VERSION = "1.0" ; # version management for git
+my $VERSION = "1.1" ; # version management for git
 
 my $this_prog = basename($0) ;
 my $NEW_EXT = "_running_snapshot_" ;
@@ -785,8 +785,7 @@ rocknroll --man
 =head1 DESCRIPTION
 
 rocknroll backups a remote directories tree srcdir in dstdir onto the
-local host.  For this
-²backup, it manages a set of archives, named
+local host.  For this backup, it manages a set of archives, named
 tag.1, tag.2, etc.  Using the 'link-dest' option of rsync, it
 keeps only the difference between the different archives.
 
