@@ -1,4 +1,4 @@
-VERSION=1.1
+VERSION=1.2
 BINDIR=/usr/bin
 ETCDIR=/etc
 MANDIR=/usr/share/man/man1

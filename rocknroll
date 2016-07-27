@@ -28,13 +28,18 @@ use Dir::Which q/which/;
 use strict ;
 
 #my $VERSION = "0.3 rev ".eval{'$Rev: 22 $'=~/(\d+)/;$1;} ; # version management for subversion
-my $VERSION = "1.1" ; # version management for git
+my $VERSION = "1.2" ; # version management for git
 
 my $this_prog = basename($0) ;
 my $NEW_EXT = "_running_snapshot_" ;
 my $OLD_EXT = "_snapshot_to_delete_" ;
 my $CONFFILE = "$this_prog.conf" ;
-my $CONFPATH = $FindBin::Bin.":".$FindBin::Bin."/../etc:/etc:/etc/${this_prog}.d" ;
+my $CONFPATH = join(":", ("."
+                          , "${FindBin::Bin}"
+                          , "${FindBin::Bin}/../etc"
+                          , "/etc","/etc/${this_prog}.d"
+                          , "/usr/local/etc")
+                          ) ;
 my $FACILITY = "local7" ;
 my %arg_conf ;
 
@@ -805,7 +810,7 @@ Almost options can as well be specified into the configuration file.
 use an alternate config file.
 
 By default, rocknroll.conf is
-searched in @/, @/../etc/, /etc/, /etc/rocknroll.d/
+searched in ., @/, @/../etc/, /etc/, /etc/rocknroll.d/ and /usr/local/etc, 
 where @ is the directory containing the rocknroll binary.
 
 =head2 --continue
