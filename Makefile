@@ -20,6 +20,7 @@ install:
 dist:
 	#[ -d man1 ] || mkdir man1
 	pod2text rocknroll > README
+	pod2html rocknroll > README.html
 	./rocknroll --man > rocknroll.1
 	sed -i -e '/version management for git/s/".*"/"${VERSION}"/' rocknroll
 	#tar cfz rocknroll-${VERSION}.tgz ${FILES}
