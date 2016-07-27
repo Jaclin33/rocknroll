@@ -242,6 +242,7 @@ END { $log->send() if $log ; closelog() ; }
     my $confname = which(-entry=>$file
             ,-defaultpath=>$path
             ) ;
+    $this->{"config_file"} = $confname ;
     return unless defined $confname ;
 
     my $conffile=new Config::General(-ConfigFile=>$confname,-ExtendedAccess => 1) or $log->warn("can't read config file $confname") ;
@@ -254,7 +255,6 @@ END { $log->send() if $log ; closelog() ; }
         $conf{$k} = $this_conf{$k} ;
       }
     }
-    # die Dumper \%conf ;
     $this->{"conf"} = \%conf ;
   }
   sub get

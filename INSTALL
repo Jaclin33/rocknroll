@@ -8,8 +8,8 @@ INSTALL
 
 DOC
 ---
-	man rocknroll
+	rocknroll --man
 
 SEE MORE
 --------
-	http://math.univ-angers.fr/~charbonnel/rocknroll
+	http://math.univ-angers.fr/~charbonnel

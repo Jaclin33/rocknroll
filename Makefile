@@ -1,4 +1,4 @@
-VERSION=1.0
+VERSION=1.1
 BINDIR=/usr/bin
 ETCDIR=/etc
 MANDIR=/usr/share/man/man1
@@ -21,4 +21,5 @@ dist:
 	[ -d man1 ] || mkdir man1
 	./rocknroll --man > rocknroll.1
 	sed -i -e '/version management for git/s/".*"/"${VERSION}"/' rocknroll
-	tar cfz rocknroll-${VERSION}.tgz ${FILES}
+	pod2text rocknroll > README
+	#tar cfz rocknroll-${VERSION}.tgz ${FILES}
