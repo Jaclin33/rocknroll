@@ -12,7 +12,7 @@
 ####################################################
 
 use Data::Dumper ;
-use Sys::Syslog ;
+use Sys::Syslog qw(:standard :macros) ;
 use File::Path::Tiny;
 use Getopt::Long ;
 use File::Basename ;
@@ -28,7 +28,7 @@ use Dir::Which q/which/;
 use strict ;
 
 #my $VERSION = "0.3 rev ".eval{'$Rev: 22 $'=~/(\d+)/;$1;} ; # version management for subversion
-my $VERSION = "1.2" ; # version management for git
+my $VERSION = "1.2.1" ; # version management for git
 
 my $this_prog = basename($0) ;
 my $NEW_EXT = "_running_snapshot_" ;
@@ -158,7 +158,7 @@ my ($log,@files,$init,@excludes,@rsync_options,$dry_run,$config,$config_file,$ar
   sub warn
   {
     my($this,$msg) = @_ ;
-    if ($config->get("use_syslog")==1) { syslog("warn",$msg) ; }
+    if ($config->get("use_syslog")==1) { syslog("warning",$msg) ; }
     else { print "$msg\n" ; }
   }
   sub crit
